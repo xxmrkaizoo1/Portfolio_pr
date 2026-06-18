@@ -4,31 +4,22 @@ import 'dart:async';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
-
-
-
 //setup class
 void main() {
   runApp(const MyApp());
 }
-
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(home: Homepage());
   }
 }
-
 class Homepage extends StatefulWidget {
-
   const Homepage({super.key});
   @override
   State<Homepage> createState() => _HomepageState();
 }
-
 class _HomepageState extends State<Homepage> {
   bool visible = true;
   bool  isHover = false;
@@ -119,9 +110,10 @@ class _HomepageState extends State<Homepage> {
                             ],
                           ),
                         ),
+
                         // Start  TextButton
                         SizedBox(width: 10),
-                        MouseRegion(
+                 MouseRegion(
                              onEnter: (event){
                                   setState((){
                                       isHover = true;
@@ -130,6 +122,57 @@ class _HomepageState extends State<Homepage> {
                               onExit:(event){
                                        setState((){
                                           isHover = false;
+                                       });
+                                    },
+                       child:Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Homepage(),
+                              ),
+                            );
+                          },
+                      child: Column(
+                          children: [
+                            Text(
+                                "SAVE",
+                                style: GoogleFonts.spaceMono(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w900,
+                                   color: Color.fromARGB(255, 93, 155, 162),
+                                 ),
+                              ),
+                            ],
+                            
+                          ),
+                        ),    
+                  
+                    AnimatedContainer(
+                           duration:const Duration(milliseconds:300),
+                           width:isHover ? 50: 0,
+                           height:isHover ? 6:0 ,
+                           color:Color.fromARGB(255, 13, 124, 136),
+                        ),  
+                        
+                    ],
+                    
+                    ),
+
+                  ),
+                SizedBox(width: 10),
+                        MouseRegion(
+                             onEnter: (event){
+                                  setState((){
+                                      isHover2 = true;
+                                  });
+                                },
+                              onExit:(event){
+                                       setState((){
+                                          isHover2 = false;
                                        });
                                     },
                        child:Column(
@@ -161,8 +204,8 @@ class _HomepageState extends State<Homepage> {
                   
                     AnimatedContainer(
                            duration:const Duration(milliseconds:300),
-                           width:isHover ? 50: 0,
-                           height:isHover ? 6:0 ,
+                           width:isHover2 ? 50: 0,
+                           height:isHover2 ? 6:0 ,
                            color:Color.fromARGB(255, 13, 124, 136),
                         ),  
                         
@@ -172,124 +215,68 @@ class _HomepageState extends State<Homepage> {
 
                   ),
 
-                   SizedBox(width: 10),
-                   MouseRegion (
-                                onEnter: (event){
-                                  setState((){
-                                      isHover1 = true;
-                                  });
-                                },
-                                onExit:(event){
-                                  setState((){
-                                      isHover1 = false; 
-                                  });
-                                },
 
-                                child:Column(     
-                                  mainAxisSize : MainAxisSize.min,
-                                   children:[
-                               TextButton(
-                               onPressed: () {
-                                  Navigator.push(
-                                  context,
-                                 MaterialPageRoute(
-                                builder: (context) => Homepage(),
-                              ),
-                            );
-                         },
-                                child: Column(
-                                      children: [
-                                       SizedBox(height: 80),
 
-                                    Text(
-                                      "SAVE",
-                                      style: GoogleFonts.spaceMono(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w900,
-                                      color: Color.fromARGB(255, 93, 155, 162),
-                                    ),
-                                     ),
-                              SizedBox(height: 10),
-                               
-                            ],
-                          ),
-                        ),
-
-                     AnimatedContainer(
-                           duration:const Duration(milliseconds:300),
-                           width:isHover ? 50: 0,
-                           height:isHover ? 6:0 ,
-                           color:Color.fromARGB(255, 13, 124, 136),
-                        ),
-                      
-                      
-                      ],
-
-                  ),
-                ),
-
-                        // Save TextButton
+                  // Save TextButton
                     SizedBox(width: 10),     
-                      MouseRegion(
-                          onEnter: (event){ 
-                              setState(( ){
-                                isHover3 = true; 
-
-                              }); },
-                          
-                          onExit : (event){
-                            setState(() { 
-                                isHover3 =  false ; 
-
-                            });
-                          },
-                          child:Column(
-                            mainAxisSize : MainAxisSize.min,
-                            children:[  
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(
+                    
+                       MouseRegion(
+                             onEnter: (event){
+                                  setState((){
+                                      isHover3 = true;
+                                  });
+                                },
+                              onExit:(event){
+                                       setState((){
+                                          isHover3 = false;
+                                       });
+                                    },
+                       child:Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => Homepage(),
                               ),
                             );
                           },
-                          child: Column(
-                            children: [
-                              SizedBox(height: 80),
-
-                              Text(
-                                "OPTIONS",
+                      child: Column(
+                          children: [
+                            Text(
+                                "OPTION",
                                 style: GoogleFonts.spaceMono(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w900,
-                                  color: Color.fromARGB(255, 93, 155, 162),
-                                ),
+                                   color: Color.fromARGB(255, 93, 155, 162),
+                                 ),
                               ),
-                              SizedBox(height: 10),
                             ],
+                            
                           ),
-                        ),
-
-                        AnimatedContainer(
-                          duration:const Duration(milliseconds:300),
-                           width:isHover ? 50: 0,
-                           height:isHover ? 6:0 ,
+                        ),    
+                  
+                    AnimatedContainer(
+                           duration:const Duration(milliseconds:300),
+                           width:isHover3 ? 50: 0,
+                           height:isHover3 ? 6:0 ,
                            color:Color.fromARGB(255, 13, 124, 136),
+                        ),  
+                        
+                             ],
+                    
+                         ),
 
-                         ), 
-                            ],
-                           ),
-                       ),
-                      ],
+                          ),
+                        ],
                     ),
                   ),
                 ],
               ),
             ),
-
-            //outside header
+        //outside header
             Container(
                     padding: EdgeInsets.only(left: 40),
                     width: double.infinity,
@@ -563,18 +550,18 @@ class _HomepageState extends State<Homepage> {
                     ),
 
                     ),
-                   SizedBox(width:double.infinity, height:70),
+                SizedBox(width:double.infinity, height:80),
                   Container(
 
                     child:Row(
                       children:[
                         
-                        SizedBox(width:40),
+                   SizedBox(width:40),
                       Container(
                         alignment: Alignment.topLeft,
                         width:400,
                         height:260 ,
-                        padding:EdgeInsets.only(left:50, top:50, right:20),
+                        padding:EdgeInsets.only(left:50, top:50, right:50),
                         decoration:BoxDecoration(
                           color:Color(0xff313030),
                           border:Border.all(
@@ -585,32 +572,46 @@ class _HomepageState extends State<Homepage> {
 
                         ),
                         child:Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                         
                             children:[
+                               
                                 Text("FRONTEND",
-                                      style:GoogleFonts.spaceMono(
-                                        color:Color.fromARGB(255, 115, 190, 178),
-                                        fontSize:25,
+                                        style:GoogleFonts.spaceMono(
+                                        color:Color(0xFF9CF0FF),
+                                        fontSize:20,
                                         fontWeight: FontWeight.w300,
                                       ),
                                 ),
+                                 SizedBox(height:10, ),
+                                 Text("INT: 94",
+                                    style:GoogleFonts.spaceMono(
+                                       color:Color(0xFF9CF0FF),
+                                        fontSize:40,
+                                        fontWeight: FontWeight.w700,
+
+                                     ),
+                                 
+                                 ),
+                                SizedBox(height:20, ),
+
                                 Container(
                                      width:double.infinity,
-                                     height:10,
+                                     height:27,
                                      decoration:BoxDecoration(
                                         color:Color.fromARGB(255, 216, 130, 219),
+                                        border:Border.all(
+                                           color:Color(0xFF5F5E5E),
+                                           width:5,
+                                        )
                                      ),
                                   
                                 ),
-
                             ],
-
-
                         ),
 
                      ),
-
-
                      SizedBox(width:30),
                         Container(
                         width:400,
@@ -647,35 +648,36 @@ class _HomepageState extends State<Homepage> {
                        Container(
                         width:400,
                         height:260 ,
-
-                        decoration:BoxDecoration(
+                        alignment: Alignment.topLeft,
+                         decoration:BoxDecoration(
                           color:Color(0xff313030),
                           border:Border.all(
                                  color:Color.fromARGB(255, 94, 85, 85),
                                   width:5 ,
+                          ), 
+                      ), 
+                        child:Column(
+                             children:[
+                                Container(
+                                   width:double.infinity,
+                                   height:10,
+                                   decoration:BoxDecoration( 
+                                      color:Color.fromARGB(255, 58, 52, 58),
+                                   ),   
+                                ),
 
-                          )
+                             ],
+                        ),                      
+                      ),
 
-                        )
 
-                     ),
 
                       ],
-                    )
-
-
+                    ),
                     
-
-                  ),
-
-                    
+                       ),       
                   ],
-                
-              )
-
-
-
-
+              ),
             ),
 
           ],
