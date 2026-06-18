@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
+
+
 //setup class
 void main() {
   runApp(const MyApp());
@@ -277,14 +279,10 @@ class _HomepageState extends State<Homepage> {
                            color:Color.fromARGB(255, 13, 124, 136),
 
                          ), 
-                        ],
-                    ),
-
-                     ),
-
-                    ],
-
-
+                            ],
+                           ),
+                       ),
+                      ],
                     ),
                   ),
                 ],
@@ -524,7 +522,7 @@ class _HomepageState extends State<Homepage> {
                                         ), 
                                   
                                    ),
-                                      //blink text
+                                     //blink text
                                     SizedBox(height:4),
                                      AnimatedOpacity( 
                                         opacity: visible ?  1.0 :  0.0, 
@@ -602,7 +600,7 @@ class _HomepageState extends State<Homepage> {
                                      decoration:BoxDecoration(
                                         color:Color.fromARGB(255, 216, 130, 219),
                                      ),
-
+                                  
                                 ),
 
                             ],
@@ -626,7 +624,7 @@ class _HomepageState extends State<Homepage> {
 
                           )
 
-                        )
+                        ),
 
                      ),
                      SizedBox(width:30),
