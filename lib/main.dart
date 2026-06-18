@@ -31,8 +31,8 @@ class _HomepageState extends State<Homepage> {
   bool visible = true;
   bool  isHover = false;
   bool  isHover1 = false;
-  bool  isHover2 = false;
-  
+  bool  isHover2 = false; 
+  bool  isHover3 =  false ;
   @override 
   void initState(){
      super.initState();
@@ -117,7 +117,6 @@ class _HomepageState extends State<Homepage> {
                             ],
                           ),
                         ),
-
                         // Start  TextButton
                         SizedBox(width: 10),
                         MouseRegion(
@@ -131,7 +130,7 @@ class _HomepageState extends State<Homepage> {
                                           isHover = false;
                                        });
                                     },
-                            child:Column(
+                       child:Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                           TextButton(
@@ -143,9 +142,9 @@ class _HomepageState extends State<Homepage> {
                               ),
                             );
                           },
-                          child: Column(
-                            children: [
-                              Text(
+                      child: Column(
+                          children: [
+                            Text(
                                 "LOAD",
                                 style: GoogleFonts.spaceMono(
                                   fontSize: 20,
@@ -165,11 +164,14 @@ class _HomepageState extends State<Homepage> {
                            color:Color.fromARGB(255, 13, 124, 136),
                         ),  
                         
-                    ],)
+                    ],
+                    
+                    ),
 
-                  ), 
+                  ),
+
                    SizedBox(width: 10),
-                       MouseRegion(
+                   MouseRegion (
                                 onEnter: (event){
                                   setState((){
                                       isHover1 = true;
@@ -181,36 +183,68 @@ class _HomepageState extends State<Homepage> {
                                   });
                                 },
 
-                           ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
+                                child:Column(     
+                                  mainAxisSize : MainAxisSize.min,
+                                   children:[
+                               TextButton(
+                               onPressed: () {
+                                  Navigator.push(
+                                  context,
+                                 MaterialPageRoute(
                                 builder: (context) => Homepage(),
                               ),
                             );
-                          },
-                          child: Column(
-                            children: [
-                              SizedBox(height: 80),
+                         },
+                                child: Column(
+                                      children: [
+                                       SizedBox(height: 80),
 
-                              Text(
-                                "SAVE",
-                                style: GoogleFonts.spaceMono(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color.fromARGB(255, 93, 155, 162),
-                                ),
-                              ),
+                                    Text(
+                                      "SAVE",
+                                      style: GoogleFonts.spaceMono(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w900,
+                                      color: Color.fromARGB(255, 93, 155, 162),
+                                    ),
+                                     ),
                               SizedBox(height: 10),
+                               
                             ],
                           ),
                         ),
 
+                     AnimatedContainer(
+                           duration:const Duration(milliseconds:300),
+                           width:isHover ? 50: 0,
+                           height:isHover ? 6:0 ,
+                           color:Color.fromARGB(255, 13, 124, 136),
+                        ),
+                      
+                      
+                      ],
+
+                  ),
+                ),
+
                         // Save TextButton
-                        SizedBox(width: 10),
-                        TextButton(
+                    SizedBox(width: 10),     
+                      MouseRegion(
+                          onEnter: (event){ 
+                              setState(( ){
+                                isHover3 = true; 
+
+                              }); },
+                          
+                          onExit : (event){
+                            setState(() { 
+                                isHover3 =  false ; 
+
+                            });
+                          },
+                          child:Column(
+                            mainAxisSize : MainAxisSize.min,
+                            children:[  
+                      TextButton(
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -235,12 +269,28 @@ class _HomepageState extends State<Homepage> {
                             ],
                           ),
                         ),
-                      ],
+
+                        AnimatedContainer(
+                          duration:const Duration(milliseconds:300),
+                           width:isHover ? 50: 0,
+                           height:isHover ? 6:0 ,
+                           color:Color.fromARGB(255, 13, 124, 136),
+
+                         ), 
+                        ],
+                    ),
+
+                     ),
+
+                    ],
+
+
                     ),
                   ),
                 ],
               ),
             ),
+
             //outside header
             Container(
                     padding: EdgeInsets.only(left: 40),
@@ -301,11 +351,12 @@ class _HomepageState extends State<Homepage> {
                       
                        ),
                     SizedBox(height: 50,),
+                    
                     Container( 
                          
                             child:Row(
-                              children:[  
-                                    MouseRegion( 
+                              children:[
+                                MouseRegion( 
                                       onEnter:((event) => {
                                          setState((){
                                             isHover1 = true;
@@ -336,9 +387,7 @@ class _HomepageState extends State<Homepage> {
                                          ),
                                       ),
                                     ), 
-                                      
-
-                                    ),  
+                              ),  
 
                                     SizedBox( width: 50, ),
 
