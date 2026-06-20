@@ -21,11 +21,17 @@ class Homepage extends StatefulWidget {
   State<Homepage> createState() => _HomepageState();
 }
 class _HomepageState extends State<Homepage> {
+  
+  
   bool visible = true;
   bool  isHover = false;
   bool  isHover1 = false;
   bool  isHover2 = false; 
   bool  isHover3 =  false ;
+  bool  isHover4 = false;
+  bool  isHover5 = false;
+  bool  showMore = false;
+  
   @override 
   void initState(){
      super.initState();
@@ -376,15 +382,15 @@ class _HomepageState extends State<Homepage> {
 
                                     SizedBox( width: 50, ),
 
-                                MouseRegion( 
+                                MouseRegion(
                                      onEnter:((event) => {
                                          setState((){
-                                            isHover2 = true;
+                                            isHover4 = true;
                                          })
                                       }),
                                       onExit:(event) =>{
                                          setState((){
-                                            isHover2 = false;
+                                            isHover4 = false;
                                          })
                                       }, 
                                       child:AnimatedContainer(
@@ -394,7 +400,7 @@ class _HomepageState extends State<Homepage> {
                                          height:100,
                                           
                                          decoration:BoxDecoration(
-                                          color:isHover2 ?  Colors.red: Color.fromARGB(255, 32, 22, 22) ,
+                                          color:isHover4 ?  Colors.red: Color.fromARGB(255, 32, 22, 22) ,
                                             border:Border.all(
                                                 color: Color(0xFFD05BFF),
                                                 width: 4,
@@ -404,7 +410,8 @@ class _HomepageState extends State<Homepage> {
                                          style:GoogleFonts.spaceMono(
                                             fontSize:20,
                                             fontWeight: FontWeight.w900,
-                                            color: isHover2 ?   Color.fromARGB(255, 32, 22, 22) :  Color.fromARGB(255, 219, 97, 203),
+                                            color: isHover4 ?   Color.fromARGB(255, 32, 22, 22) :  Color.fromARGB(255, 219, 97, 203),
+                                            
 
                                          ),
                                       ),
@@ -502,7 +509,7 @@ class _HomepageState extends State<Homepage> {
                                       SizedBox(width:double.infinity, height:10),
                                     Text(
                                       "In the year 20XX, a developer emerged from the neon-lit corridors of the digital frontier. Elias Vance doesn't just build websites; he engineers immersive dimensions. Specialized in pixel-perfect precision and high-performance logic systems. Current mission: Redefining the user experience through the lens of retro-futuristic excellence.",
-                                      style:GoogleFonts.spaceMono(
+                                    style:GoogleFonts.spaceMono(
                                         fontSize:17,
                                         fontWeight: FontWeight.w700,
                                         color: Color.fromARGB(255, 220, 253, 210),      
@@ -535,21 +542,34 @@ class _HomepageState extends State<Homepage> {
             Container(
               width:double.infinity,
               height:500,
-             color: Color.fromARGB(255, 32, 22, 22),
+              color: Color.fromARGB(255, 32, 22, 22),
               padding:EdgeInsets.only(top:30,  left:40,  right:10),
               child:Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
 
                   children:[
                     
-                    Text("CHARACTER_STATS",
-                    style:GoogleFonts.spaceMono(
-                         fontSize:25, 
-                         fontWeight: FontWeight.w700,
-                         color:Colors.blue
+                     Container(
+                         width:double.infinity,
+                         height:80,
+                        padding:EdgeInsets.only(left:40),
+                         child:Row(
+
+                            children: [
+                                 Icon(Icons.bar_chart, color:Colors.blue, size: 50,),
+                                 SizedBox(width:10),
+                                 Text("CHARACTER_STATS",
+                                style:GoogleFonts.spaceMono(
+                                fontSize:30, 
+                                fontWeight: FontWeight.w700,
+                               color:Color.fromARGB(255, 133, 189, 198),
                     ),
 
                     ),
+                            ],
+                         ),
+                  ),
+                  
                 SizedBox(width:double.infinity, height:80),
                   Container(
 
@@ -563,6 +583,13 @@ class _HomepageState extends State<Homepage> {
                         height:260 ,
                         padding:EdgeInsets.only(left:50, top:50, right:50),
                         decoration:BoxDecoration(
+                           boxShadow: [
+                                         BoxShadow(
+                                             color: Color.fromARGB(255, 14, 176, 194),
+                                               offset: Offset(5, 5),
+                                                 spreadRadius: 4,
+                                             ),
+                                          ],
                           color:Color(0xff313030),
                           border:Border.all(
                                  color:Color.fromARGB(255, 94, 85, 85),
@@ -576,10 +603,9 @@ class _HomepageState extends State<Homepage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                         
                             children:[
-                               
                                 Text("FRONTEND",
                                         style:GoogleFonts.spaceMono(
-                                        color:Color(0xFF9CF0FF),
+                                        color:Color.fromARGB(255, 133, 189, 198),
                                         fontSize:20,
                                         fontWeight: FontWeight.w300,
                                       ),
@@ -600,88 +626,501 @@ class _HomepageState extends State<Homepage> {
                                      width:double.infinity,
                                      height:27,
                                      decoration:BoxDecoration(
-                                        color:Color.fromARGB(255, 216, 130, 219),
+                                       color:Color(0xFF9CF0FF),
                                         border:Border.all(
-                                           color:Color(0xFF5F5E5E),
+                                           color:Color.fromARGB(255, 165, 163, 163),
                                            width:5,
                                         )
                                      ),
-                                  
+                                    child:Column( 
+                                         mainAxisAlignment: MainAxisAlignment.end,
+                                         crossAxisAlignment: CrossAxisAlignment.end,
+                                         children:[ 
+                                               Container( 
+                                                width:50 ,
+                                                height:17,
+                                                color:Color(0xFF5F5E5E),
+
+
+                                               
+                                               ),  
+                                         ], 
+                                    
+                                    )
+                              
+                              
                                 ),
                             ],
-                        ),
-
-                     ),
-                     SizedBox(width:30),
-                        Container(
-                        width:400,
-                        height:260 ,
-
-                        decoration:BoxDecoration(
-                          color:Color(0xff313030),
-                          border:Border.all(
-                                 color:Color.fromARGB(255, 94, 85, 85),
-                                  width:5 ,
-
-                          )
 
                         ),
 
                      ),
                      SizedBox(width:30),
-                       Container(
-                        width:400,
-                        height:260 ,
 
-                        decoration:BoxDecoration(
-                          color:Color(0xff313030),
-                          border:Border.all(
-                                 color:Color.fromARGB(255, 94, 85, 85),
-                                  width:5 ,
-
-                          )
-
-                        )
-
-                     ),
-                     SizedBox(width:30),
-                       Container(
-                        width:400,
-                        height:260 ,
+                     Container(
                         alignment: Alignment.topLeft,
-                         decoration:BoxDecoration(
+                        width:400,
+                        height:260 ,
+                        padding:EdgeInsets.only(left:50, top:50, right:50),
+                        decoration:BoxDecoration(
+                           boxShadow: [
+                                         BoxShadow(
+                                             color: Color.fromARGB(255, 173, 77, 148),
+                                               offset: Offset(5, 5),
+                                                 spreadRadius: 4,
+                                             ),
+                                          ],
                           color:Color(0xff313030),
                           border:Border.all(
                                  color:Color.fromARGB(255, 94, 85, 85),
                                   width:5 ,
                           ), 
-                      ), 
+                      
+
+                        ),
                         child:Column(
-                             children:[
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                        
+                            children:[
+                               
+                                Text("BACKEND",
+                                        style:GoogleFonts.spaceMono(
+                                       color:Color.fromARGB(255, 162, 78, 152),
+                                        fontSize:20,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                                 SizedBox(height:10, ),
+                                 Text("STR: 88",
+                                    style:GoogleFonts.spaceMono(
+                                      color:Color.fromARGB(255, 227, 105, 213),
+                                        fontSize:40,
+                                        fontWeight: FontWeight.w700,
+
+                                     ),
+                                 
+                                 ),
+                                SizedBox(height:20, ),
+
                                 Container(
-                                   width:double.infinity,
-                                   height:10,
-                                   decoration:BoxDecoration( 
-                                      color:Color.fromARGB(255, 58, 52, 58),
-                                   ),   
+                                     width:double.infinity,
+                                     height:27,
+                                     decoration:BoxDecoration(
+                                       color:Color.fromARGB(255, 227, 105, 213),
+                                        border:Border.all(
+                                           color:Color.fromARGB(255, 165, 163, 163),
+                                           width:5,
+                                        )
+                                     ),
+                                    child:Column( 
+                                         mainAxisAlignment: MainAxisAlignment.end,
+                                         crossAxisAlignment: CrossAxisAlignment.end,
+                                         children:[ 
+                                               Container( 
+                                                width:70 ,
+                                                height:17,
+                                                color:Color(0xFF5F5E5E),
+
+
+                                               
+                                               ),  
+                                         ], 
+                                    
+                                    )
+                              
+                              
+                                ),
+                            ],
+
+                        ),
+
+                     ),
+
+                     SizedBox(width:30),
+                     
+                     
+                     
+                     Container(
+                        alignment: Alignment.topLeft,
+                        width:400,
+                        height:260 ,
+                        padding:EdgeInsets.only(left:50, top:50, right:50),
+                        decoration:BoxDecoration(
+                           boxShadow: [
+                                         BoxShadow(
+                                                color:Color.fromARGB(255, 32, 183, 200),
+                                               offset: Offset(5, 5),
+                                                 spreadRadius: 4,
+                                             ),
+                                          ],
+                          color:Color(0xff313030),
+                          border:Border.all(
+                                 color:Color.fromARGB(255, 94, 85, 85),
+                                  width:5 ,
+                          ), 
+                      
+
+                        ),
+                        child:Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                        
+                            children:[
+                               
+                                Text("SPEED",
+                                        style:GoogleFonts.spaceMono(
+                                        color:Color.fromARGB(183, 61, 201, 217),
+                                        fontSize:20,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                                 SizedBox(height:10, ),
+                                 Text("SPD: 99",
+                                    style:GoogleFonts.spaceMono(
+                                      color:Color.fromARGB(255, 32, 183, 200),
+                                        fontSize:40,
+                                        fontWeight: FontWeight.w700,
+
+                                     ),
+                                 
+                                 ),
+                                SizedBox(height:20, ),
+
+                                Container(
+                                     width:double.infinity,
+                                     height:27,
+                                     decoration:BoxDecoration(
+                                       color:Color.fromARGB(255, 32, 183, 200),
+                                        border:Border.all(
+                                           color:Color.fromARGB(255, 165, 163, 163),
+                                           width:5,
+                                        )
+                                     ),
+                                    child:Column( 
+                                         mainAxisAlignment: MainAxisAlignment.end,
+                                         crossAxisAlignment: CrossAxisAlignment.end,
+                                         children:[ 
+                                               Container( 
+                                                width:10 ,
+                                                height:17,
+                                                color:Color(0xFF5F5E5E),
+
+
+                                               
+                                               ),  
+                                         ], 
+                                    
+                                    )
+                              
+                              
+                                ),
+                            ],
+
+                        ),
+
+                     ),
+
+
+                     SizedBox(width:30),
+                     
+                   Container(
+                        alignment: Alignment.topLeft,
+                        width:400,
+                        height:260 ,
+                        padding:EdgeInsets.only(left:50, top:50, right:50),
+                        decoration:BoxDecoration(
+                           boxShadow: [
+                                         BoxShadow(
+                                             color: Color.fromARGB(255, 59, 230, 73),
+                                               offset: Offset(5, 5),
+                                                 spreadRadius: 4,
+                                             ),
+                                          ],
+                          color:Color(0xff313030),
+                          border:Border.all(
+                                 color:Color.fromARGB(255, 94, 85, 85),
+                                  width:5 ,
+                          ), 
+                      
+
+                        ),
+                        child:Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                        
+                            children:[
+                               
+                                Text("DESIGN",
+                                        style:GoogleFonts.spaceMono(
+                                       color:Color.fromARGB(255, 62, 123, 66),
+                                        fontSize:20,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                                 SizedBox(height:10, ),
+                                 Text("DEX: 91",
+                                    style:GoogleFonts.spaceMono(
+                                      color:Color.fromARGB(255, 101, 218, 88),
+                                        fontSize:40,
+                                        fontWeight: FontWeight.w700,
+
+                                     ),
+                                 
+                                 ),
+                                SizedBox(height:20, ),
+
+                                Container(
+                                     width:double.infinity,
+                                     height:27,
+                                     decoration:BoxDecoration(
+                                       color:Color.fromARGB(255, 114, 232, 101),
+                                        border:Border.all(
+                                           color:Color.fromARGB(255, 165, 163, 163),
+                                           width:5,
+                                        )
+                                     ),
+                                    child:Column( 
+                                         mainAxisAlignment: MainAxisAlignment.end,
+                                         crossAxisAlignment: CrossAxisAlignment.end,
+                                         children:[ 
+                                               Container( 
+                                                width:50 ,
+                                                height:17,
+                                                color:Color(0xFF5F5E5E),
+
+
+                                               
+                                               ),  
+                                         ], 
+                                    
+                                    )
+                              
+                              
                                 ),
 
-                             ],
-                        ),                      
-                      ),
+                            ],
 
-
-
+                        ),
+                      ),  
                       ],
                     ),
-                    
-                       ),       
+                   ),       
+               
                   ],
               ),
             ),
 
+
+                Container(
+                        width:double.infinity,
+                        height:900, 
+                        alignment: Alignment.topLeft,
+                        padding:EdgeInsets.only(left:50 ,  top:50, right:50),
+                        decoration:BoxDecoration( 
+                        color: Color.fromARGB(255, 32, 22, 22),
+                        ),
+                        
+                        child:Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
+                            Container(
+                                width:double.infinity,
+                                height:70,
+                                padding:EdgeInsets.only(left:27),
+                                decoration:BoxDecoration(
+                                ),
+                                child:Row(children: [
+                                Icon(Icons.menu_book,   color:Color.fromARGB(255, 223, 100, 223), size: 50,),
+                                SizedBox(width:20),
+                                Text("QUEST_LOG",
+                                style:GoogleFonts.spaceMono(
+                                fontSize:30, 
+                                fontWeight: FontWeight.w700,
+                                color:Color.fromARGB(255, 226, 161, 226),
+                              
+                              
+                                ),
+                             ), 
+
+                           
+
+                             ],
+                               ),
+                           ),
+                           SizedBox(height:30 ,  width:double.infinity),
+
+
+                             MouseRegion(
+                                 onEnter: ((event) => {
+                                    setState((){
+                                      isHover5 = true;
+
+                                    }),
+                                 }),
+                                 onExit: ((event) => {
+                                    setState((){
+                                      isHover5 = false;
+                                    }),
+                                 }),
+
+                                 child: Row(
+                                    children:[    
+                                          SizedBox(width:40),
+    
+                                        AnimatedContainer(
+                                          duration:Duration(milliseconds:500),
+                                          width:1500, 
+                                          height:350,
+                                          decoration:BoxDecoration( 
+                                            boxShadow: [
+                                                BoxShadow(
+                                                  color:Color.fromARGB(255, 226, 161, 226),
+                                                  offset: Offset(5,5),
+                                                  spreadRadius: 2,
+                                                   ),
+                                               ],
+                                          color: Color.fromARGB(255, 32, 22, 22),
+                                            border:Border.all(
+                                            color:Color.fromARGB(255, 94, 85, 85),
+                                            width:5,
+                                   ),
+                                  ),
+                                     child :Row(
+                                             mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+
+                                              children:[
+                                                   Container(
+                                                      width:400,
+                                                      height:280,
+                                                      decoration:BoxDecoration(
+                                                          color:Color.fromARGB(255, 114, 232, 101),
+                                                           border:Border(
+                                                                  right:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
+                                                            ),
+                                                      ), 
+                                                     
+                                                     child: Image.asset(
+                                                        'assets/images/image1.jpg',
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                      
+                                                    ),
+
+                                                  
+                                                   
+                                              ],
+
+                                          )
+                                  ),
+
+
+
+
+                               ],
+                              ),
+
+                           
+                           
+                             ),
+
+
+
+                            SizedBox(height:30 ,  width:double.infinity), 
+
+                            MouseRegion(
+                                 onEnter: ((event) => {
+                                    setState((){
+                                      isHover5 = true;
+
+                                    }),
+                                 }),
+                                 onExit: ((event) => {
+                                    setState((){
+                                      isHover5 = false;
+                                    }),
+                                 }),
+
+                                 child: Row(
+                                    children:[    
+                                          SizedBox(width:40),
+
+                                  AnimatedContainer(
+                                          width:1500, 
+                                          height:350,
+                                          alignment: Alignment.topLeft,
+                                           decoration:BoxDecoration( 
+                                            boxShadow: [
+                                                BoxShadow(
+                                                  color:Color.fromARGB(255, 226, 161, 226),
+                                                  offset: Offset(5,5),
+                                                  spreadRadius: 2,
+                                                   ),
+                                               ],
+                                            color: Color.fromARGB(255, 32, 22, 22),
+                                            border:Border.all(
+                                            color:Color.fromARGB(255, 94, 85, 85),
+                                            width:5,
+                                     ),
+                                  ),
+
+                                  duration:Duration(milliseconds:500),
+                                  
+                                          child :Row(
+                                             mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+
+                                              children:[
+                                                   Container(
+                                                      width:400,
+                                                      height:280,
+                                                      decoration:BoxDecoration(
+                                                          color:Color.fromARGB(255, 114, 232, 101),
+                                                           border:Border(
+                                                                  right:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
+                                                            ),
+                                                      ), 
+                                                       
+                                                       child: Image.asset(
+                                                        'assets/images/image2.jpg',
+                                                        fit: BoxFit.cover,
+                                                      ),
+
+                                                      
+                                                    ),
+                                                   
+                                              ],
+
+                                          ),
+                                      ),
+
+
+
+                                     ],
+                                 ),
+                             ),         
+                         
+                         
+                          ],
+                          
+                          
+                 ),
+                
+              ),
+
+              // Container( 
+              //   child:Column(children:[
+
+
+
+
+              //   ]),
+              // )
           ],
         ),
+      
       ),
     );
   }
