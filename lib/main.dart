@@ -871,6 +871,7 @@ class _HomepageState extends State<Homepage> {
                                 SizedBox(height:20, ),
 
                                 Container(
+                                    alignment: Alignment.topLeft,
                                      width:double.infinity,
                                      height:27,
                                      decoration:BoxDecoration(
@@ -881,8 +882,8 @@ class _HomepageState extends State<Homepage> {
                                         )
                                      ),
                                     child:Column( 
-                                         mainAxisAlignment: MainAxisAlignment.end,
-                                         crossAxisAlignment: CrossAxisAlignment.end,
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
                                          children:[ 
                                                Container( 
                                                 width:50 ,
@@ -990,7 +991,6 @@ class _HomepageState extends State<Homepage> {
                                      child :Row(
                                              mainAxisAlignment: MainAxisAlignment.start,
                                               crossAxisAlignment: CrossAxisAlignment.start,
-
                                               children:[
                                                    Container(
                                                       width:400,
@@ -999,6 +999,7 @@ class _HomepageState extends State<Homepage> {
                                                           color:Color.fromARGB(255, 114, 232, 101),
                                                            border:Border(
                                                                   right:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
+                                                                  bottom:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
                                                             ),
                                                       ), 
                                                      
@@ -1009,11 +1010,32 @@ class _HomepageState extends State<Homepage> {
                                                       
                                                     ),
 
+                                                    Container(
+                                                      // alignment: Alignment.topLeft,
+                                                      padding:EdgeInsets.only(left:40, top:40),
+                                                       width:800,
+                                                       height:350,
+                                                       decoration:BoxDecoration(
+                                                          color:Colors.red, 
+                                                      ),
+                                                    child:Column(
+                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                                        children:[
+                                                            Text("HELLO WORLD")
+                                                            ],
+
+                                                        
+                                                    ),
+
+                                                    ),
+
+
                                                   
                                                    
                                               ],
 
-                                          )
+                                          ),
                                   ),
 
 
@@ -1080,6 +1102,7 @@ class _HomepageState extends State<Homepage> {
                                                           color:Color.fromARGB(255, 114, 232, 101),
                                                            border:Border(
                                                                   right:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
+                                                                  bottom:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
                                                             ),
                                                       ), 
                                                        
@@ -1089,6 +1112,13 @@ class _HomepageState extends State<Homepage> {
                                                       ),
 
                                                       
+                                                    ),
+                                                    Container( 
+                                                       width:800,
+                                                       height:350,
+                                                       decoration:BoxDecoration(
+                                                         color:Colors.red,
+                                                       )
                                                     ),
                                                    
                                               ],
