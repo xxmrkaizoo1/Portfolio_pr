@@ -1383,27 +1383,20 @@ class _HomepageState extends State<Homepage> {
                                                               ),
                                                             ],
                                                           ),
-                                                      ),
 
+                                                      ),
 
 
                                                    ],     
                                               ),
-
                                         ), 
                                      ],
                                ),
                            ),
                           ],
-                       
-                        
                          ),
-                      ),   
-
-                            
+                      ),             
                 ),
-              
-              
                 SizedBox(height:50),
 
                        Container(
@@ -1411,7 +1404,7 @@ class _HomepageState extends State<Homepage> {
                                  padding:EdgeInsets.only(left:60),
                                  height:70 ,
                                  decoration:BoxDecoration(
-                                  color:Color.fromARGB(255, 94, 85, 85),
+                                  // color:Color.fromARGB(255, 94, 85, 85),
                                 ),
                                 child:Column(
                                   
@@ -1423,7 +1416,7 @@ class _HomepageState extends State<Homepage> {
 
                                               });
                                              },
-                                           child:Text(showMore ? "Show Less" :"Show More" , 
+                                           child:Text(showMore ? "Show Less Λ " :"Show More V" , 
                                                style:GoogleFonts.inter(
                                                fontSize:20, 
                                                fontWeight: FontWeight.w500,
@@ -1443,7 +1436,7 @@ class _HomepageState extends State<Homepage> {
 
               Container( 
                 width:double.infinity,
-                height:500,
+                height:200,
                 decoration:BoxDecoration(
                     color: Color.fromARGB(255, 32, 22, 22),
                 ),
@@ -1469,7 +1462,7 @@ class _HomepageState extends State<Homepage> {
                                       ),
 
                                       SizedBox(width:900 ),
-
+                                      
                                         MouseRegion(  
                                           onEnter: ((event){
                                               setState((){
