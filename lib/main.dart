@@ -911,7 +911,7 @@ class _HomepageState extends State<Homepage> {
 
                 Container(
                         width:double.infinity,
-                        height:showMore ? 2000:1200, 
+                        height:1600, 
                         alignment: Alignment.topLeft,
                         padding:EdgeInsets.only(left:50 ,  top:50, right:50),
                         decoration:BoxDecoration( 
@@ -1303,7 +1303,7 @@ class _HomepageState extends State<Homepage> {
                                                       ), 
                                                      
                                                      child: Image.asset(
-                                                        'assets/images/.jpg',
+                                                        'assets/images/image3.jpg',
                                                         fit: BoxFit.cover,
                                                       ),
                                                       
@@ -1349,7 +1349,7 @@ class _HomepageState extends State<Homepage> {
                                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                                    crossAxisAlignment: CrossAxisAlignment.center,
                                                                   children:[
-                                                                    Text( "THREE.JS" , style:GoogleFonts.spaceMono(
+                                                                    Text( "NODE.JS" , style:GoogleFonts.spaceMono(
                                                                      fontSize:20,
                                                                      color:Color.fromARGB(255, 201, 185, 185),
                                                                      ),),
@@ -1367,8 +1367,7 @@ class _HomepageState extends State<Homepage> {
                                                               //     color:
                                                                   
                                                               //  ),
-                                                             ),
-                                                             
+                                                             ), 
                                                                child:Column(
                                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                                    crossAxisAlignment: CrossAxisAlignment.center,
@@ -1424,7 +1423,7 @@ class _HomepageState extends State<Homepage> {
 
                                               });
                                              },
-                                             child:Text(showMore ? "Show Less" :"Show More" , 
+                                           child:Text(showMore ? "Show Less" :"Show More" , 
                                                style:GoogleFonts.inter(
                                                fontSize:20, 
                                                fontWeight: FontWeight.w500,
@@ -1436,11 +1435,6 @@ class _HomepageState extends State<Homepage> {
                                    ],
                                  ),
                                 ), 
-
-
-
-                             
-
                           ],            
              
                ),
@@ -1534,7 +1528,7 @@ class _HomepageState extends State<Homepage> {
 
                                       SizedBox(width:20),
 
-                                            MouseRegion(  
+                                      MouseRegion(  
                                           onEnter: ((event){
                                               setState((){
                                                     isHover9 = true;
@@ -1590,14 +1584,11 @@ class _HomepageState extends State<Homepage> {
                                           onEnter: ((event){
                                               setState((){
                                                     isHover10 = true;
-
                                               });
-
                                           }), 
                                           onExit: ((event){
                                             setState((){});
                                                   isHover10 = false;
-                                          
                                           }),
                                             child:Column(
                                                mainAxisAlignment: MainAxisAlignment.center,
