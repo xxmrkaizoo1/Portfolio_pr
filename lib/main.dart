@@ -36,8 +36,9 @@ class _HomepageState extends State<Homepage> {
   bool  isHover8 = false;
   bool  isHover9 = false;
   bool  isHover10 = false;
+  bool  isHover11 = false;
  
-  // bool  showMore = false;
+  bool  showMore = false;
   
   @override 
   void initState(){
@@ -646,16 +647,10 @@ class _HomepageState extends State<Homepage> {
                                                Container( 
                                                 width:50 ,
                                                 height:17,
-                                                color:Color(0xFF5F5E5E),
-
-
-                                               
+                                                color:Color(0xFF5F5E5E),   
                                                ),  
                                          ], 
-                                    
-                                    )
-                              
-                              
+                                    ), 
                                 ),
                             ],
 
@@ -895,16 +890,10 @@ class _HomepageState extends State<Homepage> {
                                                Container( 
                                                 width:50 ,
                                                 height:17,
-                                                color:Color(0xFF5F5E5E),
-
-
-                                               
+                                                color:Color(0xFF5F5E5E),                          
                                                ),  
                                          ], 
-                                    
-                                    )
-                              
-                              
+                                    ),
                                 ),
 
                             ],
@@ -922,7 +911,7 @@ class _HomepageState extends State<Homepage> {
 
                 Container(
                         width:double.infinity,
-                        height:900, 
+                        height:showMore ? 2000:1200, 
                         alignment: Alignment.topLeft,
                         padding:EdgeInsets.only(left:50 ,  top:50, right:50),
                         decoration:BoxDecoration( 
@@ -1094,11 +1083,7 @@ class _HomepageState extends State<Homepage> {
 
 
                                                           ),
-
-                                                            
-
-
-                                                            ],
+                                                        ],
                                                           ),
                                                       ), 
 
@@ -1115,17 +1100,11 @@ class _HomepageState extends State<Homepage> {
                                           ),
                                   ),
                                ],
-                              ),
-
-                           
-                           
+                              ), 
                              ),
 
-
-
                             SizedBox(height:30 ,  width:double.infinity), 
-
-                      MouseRegion(
+                            MouseRegion(
                                  onEnter: ((event) => {
                                     setState((){
                                       isHover7 = true;
@@ -1158,8 +1137,8 @@ class _HomepageState extends State<Homepage> {
                                             border:Border.all(
                                             color:Color.fromARGB(255, 94, 85, 85),
                                             width:5,
-                                   ),
-                                  ),
+                                        ),
+                                        ),
                                      child :Row(
                                              mainAxisAlignment: MainAxisAlignment.start,
                                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1230,7 +1209,7 @@ class _HomepageState extends State<Homepage> {
                                                                   ],
                                                                ),
                                                           ),
-                                                          SizedBox(width:20),
+                                                      SizedBox(width:20),
                                                          Container(
                                                              alignment: Alignment.center,
                                                              width:100 ,
@@ -1249,44 +1228,226 @@ class _HomepageState extends State<Homepage> {
                                                                   children:[
                                                                     Text( "RUST" , style:GoogleFonts.spaceMono(
                                                                      fontSize:20,
-                                                                    color:Color.fromARGB(255, 201, 185, 185),
+                                                                     color:Color.fromARGB(255, 201, 185, 185),
                                                                      )),
                                                                   ],
                                                                ),
 
                                                                
                                                               ),
-
-                                                            
-
-
                                                             ],
                                                           ),
-                                                      ), 
+                                                      ),
 
-                                                        
-                                                   ],
 
-                                                        
-                                                    ),
 
-                                                    ),
-                                             ],
+                                                   ],     
+                                              ),
 
+                                        ),              
+                                     ],
                                           ),
-                                  ),
-
-
-
-
+                               ),
                                ],
                               ),
-
-                           
-                           
                              ),
+                          SizedBox(
+                               height:20,
+                          ),
+                      if(showMore )
+                    AnimatedContainer(
+                                duration:Duration(milliseconds:500),
+                                  child:  MouseRegion(
+                                 onEnter: ((event) => {
+                                    setState((){
+                                      isHover11 = true;
+
+                                    }),
+                                 }),
+                                 onExit: ((event) => {
+                                    setState((){
+                                      isHover11 = false;
+                                    }),
+                                 }),
+
+                                 child: Row(
+                                    children:[    
+                                   SizedBox(width:40),
+                                        AnimatedContainer(
+                                          duration:Duration(milliseconds:500),
+                                          width:showMore ? 1500 : 0, 
+                                          height:showMore ? 350 : 0 ,
+                                          decoration:BoxDecoration( 
+                                            boxShadow: [
+                                                BoxShadow(
+                                                  color:Color.fromARGB(255, 226, 161, 226),
+                                                  offset: Offset(5,5),
+                                                  spreadRadius: 2,
+                                                   ),
+                                               ],
+                                           color: Color.fromARGB(255, 32, 22, 22),
+                                            border:Border.all(
+                                            color:Color.fromARGB(255, 94, 85, 85),
+                                            width:5,
+                                        ),
+                                        ),
+                                     child :Row(
+                                             mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children:[
+                                                   Container(
+                                                      width:400,
+                                                      height:280,
+                                                      decoration:BoxDecoration(
+                                                          color:Color.fromARGB(255, 114, 232, 101),
+                                                           border:Border(
+                                                                  right:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
+                                                                  bottom:BorderSide(width:5.0, color:Color.fromARGB(255, 94, 85, 85)),
+                                                            ),
+                                                      ), 
+                                                     
+                                                     child: Image.asset(
+                                                        'assets/images/.jpg',
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                      
+                                                    ),
+
+                                                    Container(  
+                                                       padding:EdgeInsets.only(left:40, top:40),
+                                                       width:1090,
+                                                       height:350,
+                                                       decoration:BoxDecoration(
+                                                      ),
+                                                    child:Column(
+                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                                      
+                                                        children:[
+                                                           Text("Cyber_Vault_V10",
+                                                            style:GoogleFonts.spaceMono(
+                                                            fontSize:30, 
+                                                            fontWeight: FontWeight.w700,
+                                                            color:isHover11 ?Color.fromARGB(255, 233, 73, 233) :  Color.fromARGB(255, 255, 196, 255) ,
+                                                           ),
+                                                         ),
+                                                         Text("Developing a decentralized cybersecurity framework with an interactive 3D visualization system for real-time data flow analysis." , 
+                                                         style:GoogleFonts.inter(
+                                                             fontSize:20, 
+                                                            fontWeight: FontWeight.w500,
+                                                            color:Color.fromARGB(255, 135, 123, 123),
+                                                         )),
+
+                                                            SizedBox(height:40),
+                                                      Container( 
+                                                          child:Row(
+                                                            children:[
+                                                             Container(
+                                                             alignment: Alignment.center,
+                                                             width:150 ,
+                                                             height:60 ,
+                                                             decoration:BoxDecoration(
+                                                                color:Color.fromARGB(255, 94, 85, 85),
+                                                             ),  
+                                                               child:Column(  
+                                                                   mainAxisAlignment: MainAxisAlignment.center,
+                                                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                                                  children:[
+                                                                    Text( "THREE.JS" , style:GoogleFonts.spaceMono(
+                                                                     fontSize:20,
+                                                                     color:Color.fromARGB(255, 201, 185, 185),
+                                                                     ),),
+                                                                  ],
+                                                               ),
+                                                          ),
+                                                      SizedBox(width:20),
+                                                         Container(
+                                                             alignment: Alignment.center,
+                                                             width:100 ,
+                                                             height:60 ,
+                                                             decoration:BoxDecoration(  
+                                                               color:Color.fromARGB(255, 94, 85, 85),
+                                                              //  border:Border.all(
+                                                              //     color:
+                                                                  
+                                                              //  ),
+                                                             ),
+                                                             
+                                                               child:Column(
+                                                                   mainAxisAlignment: MainAxisAlignment.center,
+                                                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                                                  children:[
+                                                                    Text( "RUST" , style:GoogleFonts.spaceMono(
+                                                                     fontSize:20,
+                                                                     color:Color.fromARGB(255, 201, 185, 185),
+                                                                     )),
+                                                                  ],
+                                                               ),
+
+                                                               
+                                                              ),
+                                                            ],
+                                                          ),
+                                                      ),
+
+
+
+                                                   ],     
+                                              ),
+
+                                        ), 
+                                     ],
+                               ),
+                           ),
+                          ],
+                       
+                        
+                         ),
+                      ),   
+
+                            
+                ),
+              
+              
+                SizedBox(height:50),
+
+                       Container(
+                                 width: double.infinity ,
+                                 padding:EdgeInsets.only(left:60),
+                                 height:70 ,
+                                 decoration:BoxDecoration(
+                                  color:Color.fromARGB(255, 94, 85, 85),
+                                ),
+                                child:Column(
+                                  
+                                  children:[
+                                      TextButton(
+                                          onPressed: (){ 
+                                              setState( (){
+                                                   showMore  = !showMore;
+
+                                              });
+                                             },
+                                             child:Text(showMore ? "Show Less" :"Show More" , 
+                                               style:GoogleFonts.inter(
+                                               fontSize:20, 
+                                               fontWeight: FontWeight.w500,
+                                               color:Color.fromARGB(255, 170, 78, 165),     
+                                               ),
+                                              
+                                            ),
+                                       ),
+                                   ],
+                                 ),
+                                ), 
+
+
+
+                             
+
                           ],            
-                 ),
+             
+               ),
                 
               ),
 
@@ -1418,10 +1579,8 @@ class _HomepageState extends State<Homepage> {
                                                                   fontWeight: FontWeight.w500,
                                                                   color: isHover9 ?  Color.fromARGB(255, 170, 78, 165) :Color.fromARGB(255, 223, 185, 221) ,  
                                                                        ),
-                                                                 ),
-                                                                
+                                                                 ),  
                                                             ),
-                                                         
                                                           ],
                                                         ),
                                                        ),
@@ -1430,10 +1589,7 @@ class _HomepageState extends State<Homepage> {
                                             ),
 
                                         ),
-
-
                                     SizedBox(width:20,),
-
                                      MouseRegion(  
                                           onEnter: ((event){
                                               setState((){
