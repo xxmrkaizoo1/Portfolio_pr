@@ -1255,7 +1255,7 @@ class _HomepageState extends State<Homepage> {
                                height:20,
                           ),
                       if(showMore )
-                    AnimatedContainer(
+                        AnimatedContainer(
                                 duration:Duration(milliseconds:500),
                                   child:  MouseRegion(
                                  onEnter: ((event) => {
