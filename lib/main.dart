@@ -5,6 +5,8 @@ import 'dart:async';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
+import 'profilepage.dart';
+
 //setup class
 void main() {
   runApp(const MyApp());
@@ -31,8 +33,8 @@ class _HomepageState extends State<Homepage> {
   bool  isHover3 =  false;
   bool  isHover4 = false;
   bool  isHover5 = false;
-  bool isHover6  = false;
-  bool isHover7 = false;
+  bool  isHover6  = false;
+  bool  isHover7 = false;
   bool  isHover8 = false;
   bool  isHover9 = false;
   bool  isHover10 = false;
@@ -61,7 +63,7 @@ class _HomepageState extends State<Homepage> {
           children: [
             Container(
               width: double.infinity,
-              height: 200,
+              height: 100,
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 0, 0, 0),
                 border: Border(
@@ -104,7 +106,7 @@ class _HomepageState extends State<Homepage> {
                           },
                           child: Column(
                             children: [
-                              SizedBox(height: 80),
+                              SizedBox(height: 20),
                              
                               Text(
                                 "START",
@@ -126,8 +128,8 @@ class _HomepageState extends State<Homepage> {
                         ),
 
                         // Start  TextButton
-                        SizedBox(width: 10),
-                 MouseRegion(
+                     SizedBox(width: 10),
+                      MouseRegion(
                              onEnter: (event){
                                   setState((){
                                       isHover = true;
@@ -228,9 +230,6 @@ class _HomepageState extends State<Homepage> {
                     ),
 
                   ),
-
-
-
                   // Save TextButton
                     SizedBox(width: 10),     
                     
@@ -253,7 +252,7 @@ class _HomepageState extends State<Homepage> {
                               Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Homepage(),
+                                builder: (context) =>  Settingpage(),
                               ),
                             );
                           },
@@ -290,6 +289,9 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
             ),
+
+
+
         //outside header
             Container(
                     padding: EdgeInsets.only(left: 40),
@@ -1216,10 +1218,13 @@ class _HomepageState extends State<Homepage> {
                                                              height:60 ,
                                                              decoration:BoxDecoration(  
                                                                color:Color.fromARGB(255, 94, 85, 85),
-                                                              //  border:Border.all(
-                                                              //     color:
+                                                               border:Border(
+                                                                top:BorderSide(
+                                                                   width:3,
+
+                                                                 ),
                                                                   
-                                                              //  ),
+                                                               ),
                                                              ),
                                                              
                                                                child:Column(
@@ -1449,7 +1454,15 @@ class _HomepageState extends State<Homepage> {
                             padding:EdgeInsets.only(top:20 ,  left:90 ),
                              width:double.infinity, 
                              height:200 ,
-                             color:const Color.fromARGB(255, 41, 32, 31), 
+                             decoration:BoxDecoration(
+                                color:const Color.fromARGB(255, 41, 32, 31), 
+                                border:Border( 
+                                     top:BorderSide(
+                                         color: Color.fromARGB(255, 92, 74, 72), 
+                                          width :6, 
+                                     ),
+                                )
+                             ),
                               child:Row (
                                 children:[
                                       Text("@198X PORTFOLIO SYSTEM V1.0.4"  , 
@@ -1462,7 +1475,7 @@ class _HomepageState extends State<Homepage> {
                                       ),
 
                                       SizedBox(width:900 ),
-                                      
+
                                         MouseRegion(  
                                           onEnter: ((event){
                                               setState((){
@@ -1604,17 +1617,14 @@ class _HomepageState extends State<Homepage> {
 
                                                              AnimatedContainer(
                                                                 duration: Duration(milliseconds: 300),
-
                                                                 child:Text("QUIT"  , 
                                                                   style:GoogleFonts.inter(
                                                                   fontSize:20, 
                                                                   fontWeight: FontWeight.w500,
                                                                   color: isHover10 ?  Color.fromARGB(255, 170, 78, 165) :Color.fromARGB(255, 223, 185, 221) ,  
                                                                        ),
-                                                                 ),
-                                                                
+                                                                 ),  
                                                             ),
-                                                         
                                                           ],
                                                         ),
                                                        ),
@@ -1624,26 +1634,13 @@ class _HomepageState extends State<Homepage> {
                                   ],
                                ),
                          ),
-                   ],),
+                   ],
+                   ),
               )
           ],
         ),
       
       ),
-    );
-  }
-}
-class profilepage extends StatelessWidget {
-  const profilepage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("profile page")),
-      body: Container(child: Column(children:[
-          ]
-            
-        )),
     );
   }
 }
