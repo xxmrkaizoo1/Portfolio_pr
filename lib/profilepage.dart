@@ -283,6 +283,26 @@ class _SettingpageState extends State<Settingpage> {
                    decoration:BoxDecoration(
                     color: Color.fromARGB(255, 0, 0, 0),
                    ),  
+                     child:Column(
+                          children:[
+                              Container(
+                                width:double.infinity,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 13, 124, 136),
+                                ),  
+
+                              ),
+
+                              S 
+ 
+                           ],
+
+                     ),  
+                   
+                   
+                   
+                   
                     ),
 
 
