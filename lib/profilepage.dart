@@ -34,9 +34,9 @@ class _SettingpageState extends State<Settingpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
+      body: SingleChildScrollView (
+         child:Column( children: [  
+                Container(
             child: Column(
               children: [
                 Container(
@@ -236,7 +236,7 @@ class _SettingpageState extends State<Settingpage> {
 
 
                             // Save TextButton
-                            SizedBox(width: 10),
+                   SizedBox(width: 10),
                         TextButton(
                           onPressed: () {
                             Navigator.push(
@@ -248,9 +248,8 @@ class _SettingpageState extends State<Settingpage> {
                           },
                           child: Column(
                             children: [
-                              SizedBox(height: 20),
-                             
-                              Text(
+                               SizedBox(height:50),
+                            Text(
                                 "OPTION",
                                 style: GoogleFonts.spaceMono(
                                   fontSize: 20,
@@ -274,95 +273,99 @@ class _SettingpageState extends State<Settingpage> {
                     ],
                   ),
                 ),
-                Container( 
+             Container( 
                  width:double.infinity, 
-                  height:600,
+                 padding:EdgeInsets.only(top:70  , left:90),
+                  height:900,
                    decoration:BoxDecoration(
-                    color: Color.fromARGB(255, 0, 0, 0),
+                       color: Color.fromARGB(255, 0, 0, 0),
                    ),  
                      child:Column(
-                          children:[
-                            SizedBox(height: 20), 
-                              Container(
-                                width:double.infinity,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 13, 124, 136),
-                                 ),
-                                child:Column(
-                                 mainAxisAlignment: MainAxisAlignment.start,
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                    children:[
-                                    Text( 
-                                        "System Setting",
-                                          style: GoogleFonts.spaceMono(
-                                          color:Color.fromARGB(255, 72, 192, 192) ),
-                                        
-                                    ),
-                                      
-                               AnimatedOpacity( 
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:[
+                          
+                           Container(
+                                child:Row(
+                                  children:[
+                              Container( width:500 , 
+                                        height:100, 
+                                        color: Color.fromARGB(255, 237, 11, 11), 
+                                          child:Row(
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                             crossAxisAlignment: CrossAxisAlignment.start,
+                                             children:[
+                                                 Text("System_Settins"  , 
+                                                  style: GoogleFonts.spaceMono(
+                                                  fontSize: 20, 
+                                                 fontWeight:FontWeight.w900,
+                                                 color: Color.fromARGB(255, 93, 155, 162),
+                                                  ),
+                                                  
+                                                   ),
+                                             SizedBox(width:10), 
+
+                                  AnimatedOpacity( 
                                         opacity: visible ?  1.0 :  0.0, 
                                         duration: Duration(milliseconds:2),
-                                        child: Text("_", 
-                                        style:GoogleFonts.spaceMono(
-                                              fontSize:20,
-                                              color:Colors.green,
-                                            ),
-                                       ),
-                                 ),
-
-                                SizedBox(height:10), 
-                                Container(
-                                     child:Column(    
-                                        children:[
-
-
-
-                                        ]
-
-                                     
-                                     )
-
-
-                                ),
+                                        child: Text("____..", 
+                                           style:GoogleFonts.spaceMono(
+                                               fontSize:20,
+                                               color:Colors.green,
+                                           ),
+                                      ),
+                                    ),   
 
 
                                   
-                                    
-                                      
-                                    ],
+                                            
+                                            
+                               
+                               
+                                          ],
+                               
+                               
+                                          ),
+                                       
+                                       ),
+                                  
+
+
+
+                                  ],
 
                                 )
+                              ), 
+                         
+                   
 
-                          ), 
 
-                    
-                     
-                          SizedBox(height: 60),    
-
-                                
                         ],
+               
                      ),  
-                    ),
+
+         
+         
+         
+              ),  
 
 
 
-                    
-             
-            
-            
-            
-            
+
+
+
              ],
-            
             
             ),
           ),
+           
+         ])
+    
           
           
           
           
-          ],
+          
           
 
 

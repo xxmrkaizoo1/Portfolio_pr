@@ -682,7 +682,8 @@ class _HomepageState extends State<Homepage> {
                       
 
                         ),
-                        child:Column(
+                    
+                      child:Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                         
