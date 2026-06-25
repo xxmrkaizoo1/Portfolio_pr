@@ -39,6 +39,7 @@ class _HomepageState extends State<Homepage> {
   bool  isHover9 = false;
   bool  isHover10 = false;
   bool  isHover11 = false;
+  
  
   bool  showMore = false;
   
@@ -499,7 +500,6 @@ class _HomepageState extends State<Homepage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                                
                                   children: [
-                                    
                                      Text( "STORY",
                                         style:GoogleFonts.spaceMono(
                                         fontSize:25, 

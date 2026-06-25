@@ -127,11 +127,8 @@ class _SettingpageState extends State<Settingpage> {
                               ),
                             ),
               
-                      
-                      SizedBox(width: 10),
-                      
-
                             SizedBox(width: 10),
+              
                             MouseRegion(
                               onEnter: (event) {
                                 setState(() {
@@ -279,45 +276,94 @@ class _SettingpageState extends State<Settingpage> {
                 ),
                 Container( 
                  width:double.infinity, 
-                  height:100,
+                  height:600,
                    decoration:BoxDecoration(
                     color: Color.fromARGB(255, 0, 0, 0),
                    ),  
                      child:Column(
                           children:[
+                            SizedBox(height: 20), 
                               Container(
                                 width:double.infinity,
-                                height: 10,
+                                height: 100,
                                 decoration: BoxDecoration(
                                   color: Color.fromARGB(255, 13, 124, 136),
-                                ),  
+                                 ),
+                                child:Column(
+                                 mainAxisAlignment: MainAxisAlignment.start,
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                    children:[
+                                    Text( 
+                                        "System Setting",
+                                          style: GoogleFonts.spaceMono(
+                                          color:Color.fromARGB(255, 72, 192, 192) ),
+                                        
+                                    ),
+                                      
+                               AnimatedOpacity( 
+                                        opacity: visible ?  1.0 :  0.0, 
+                                        duration: Duration(milliseconds:2),
+                                        child: Text("_", 
+                                        style:GoogleFonts.spaceMono(
+                                              fontSize:20,
+                                              color:Colors.green,
+                                            ),
+                                       ),
+                                 ),
 
-                              ),
+                                SizedBox(height:10), 
+                                Container(
+                                     child:Column(    
+                                        children:[
 
-                              S 
- 
-                           ],
 
+
+                                        ]
+
+                                     
+                                     )
+
+
+                                ),
+
+
+                                  
+                                    
+                                      
+                                    ],
+
+                                )
+
+                          ), 
+
+                    
+                     
+                          SizedBox(height: 60),    
+
+                                
+                        ],
                      ),  
-                   
-                   
-                   
-                   
                     ),
 
 
-              
-              ],
 
-
-
+                    
+             
+            
+            
+            
+            
+             ],
+            
+            
             ),
           ),
-
-
-
-
-        ],
+          
+          
+          
+          
+          ],
+          
 
 
       ),
